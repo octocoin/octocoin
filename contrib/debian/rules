@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+
+#DEB_MAKE_CHECK_TARGET = test_octocoin
+#build/octocoind::
+#	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_octocoin)
+
+DEB_INSTALL_EXAMPLES_octocoind += debian/examples/*
+DEB_INSTALL_MANPAGES_octocoind += debian/manpages/*
+
+%:
+	dh --with bash-completion $@
+
+override_dh_auto_build:
+	cd src; $(MAKE) -f makefile.unix octocoind
+	$(MAKE)
+
+override_dh_auto_clean:
+	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f octocoin-qt; fi
+	cd src; $(MAKE) -f makefile.unix clean
+
+override_dh_auto_configure:
+	qmake octocoin-qt.pro USE_QRCODE=1
+
+override_dh_auto_test:
+	cd src; $(MAKE) -f makefile.unix test_octocoin
+	src/test_octocoin
+
+# Ensure wrapper is set executable
+binary-post-install/octocoind:
+	chmod +x $(cdbs_curdestdir)usr/bin/octocoind
+binary-post-install/octocoin-qt:
+	chmod +x $(cdbs_curdestdir)usr/bin/octocoin-qt

@@ -1,0 +1,6 @@
+octocoin-qt usr/bin
+share/pixmaps/octocoin32.xpm usr/share/pixmaps
+share/pixmaps/octocoin16.xpm usr/share/pixmaps
+share/pixmaps/octocoin128.png usr/share/pixmaps
+debian/octocoin-qt.desktop usr/share/applications
+debian/octocoin-qt.protocol usr/share/kde4/services/
