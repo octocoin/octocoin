@@ -2,9 +2,10 @@
 =========================
 
 OctoCoin 1.8 is a complete re-architecture of OctoCoin, dropping the Litecoin
-client as its base for Bitcoin 0.9.2. While OctoCoin retails the same Scrypt PoW 
-algorithm and same reward schedule (albeit with tweaks), there are a lot of
-changes under the hood.
+client as its base for Bitcoin 0.9.2. While OctoCoin retains the same Scrypt 
+PoW algorithm and same reward schedule (albeit with tweaks), there are a lot 
+of changes under the hood. This is the first version to include the hardfork
+at block #75,888.
 
 
 For the full Bitcoin 0.9.x changelog, please see https://bitcointalk.org/index.php?topic=522014
