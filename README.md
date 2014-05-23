@@ -14,7 +14,8 @@ OctoCoin [888] - Open Source cryptographic Internet currency (Launch: Mar 8th, 2
 	- 80 OctoCoins per block
 	- Block reward is halved each year
 
-*Hardfork #1 Changes [Block 75,888+]
+*Hardfork #1 [Block 75,888+]
+ - ETA: Monday, May 26, 2014 @ 8:08 AM (UTC)
  - Difficulty adjusts after every block using a weighted calculation
  - Bonus blocks and standard blocks are averaged together to create steady 188 coin blocks (distribution and total coins remain unaffected).
  
